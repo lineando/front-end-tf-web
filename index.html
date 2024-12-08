@@ -3,29 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/iflogo.png" type="image/png">
     <link rel="stylesheet" href="css/estilo.css">
-    <title>Achados&Perdidos</title>
+    <title>Achados & Perdidos</title>
 </head>
 <body>
     <header>
-        <element class="header">
-            <img src="img/logo.png" width="300" weight="300">
-        </element>
-        </header>
-    
-        <element class="menu-container">
+        <a href="index.html">
+            <img src="img/logo.png" alt="Logo Achados & Perdidos">
+        </a>
+        <a href="login.html">
+            <img src="img/acesso.png" alt="Ícone de Acesso">
+        </a>
+    </header>
 
-        <div>
-           <li><a href="login.html"><button onclick="window.location.href='vigias.html'">Vigias</button></a><br><br> </li>
-           <li><a href="cadastrar.html"><button onclick="window.location.href='cadastrar.html'">Cadastrar Item</button><br><br></a> </li>
-            <li><button onclick="window.location.href='procurar_item.html'">Procurar Item</button></li>
-        </div>
-    </ul>
-</element>
-
-    <footer class="footer">
-    </footer>
-
-
+    <main>
+        <div class="menu-container">
+            <ul class="menu-list">
+              <li><a href="cadastrar.html" class="menu-button">Cadastrar Item</a></li>
+              <li><a href="procurar_item.html" class="menu-button">Procurar Item</a></li>
+              <li><a href="fale_conosco.html" class="menu-button">Fale Conosco</a></li>
+            </ul>
+          </div>
+    </main>
+    <footer class="footer"></footer>
 </body>
 </html>
+

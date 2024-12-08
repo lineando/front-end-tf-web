@@ -1,28 +1,40 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/iflogo.png" type="image/png">
     <title>Login dos Vigias</title>
     <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
     <header>
-        <element class="header">
-            <img src="img/unnamed.jpg" width="300" weight="300">
-        </element>
-        </header>
-    <div class="login-container">
-        <h1>Login dos Vigias</h1>
-        <form action="processa_login.php" method="post">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
-            
-            <label for="senha">Senha</label>
-            <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
-            
-            <button type="submit">Entrar</button>
-        </form>
-    </div>
+        <a href="index.html">
+            <img src="img/logo.png" alt="Logo Achados & Perdidos">
+        </a>
+        <nav>
+            <a href="index.html">Menu</a>
+            <a href="cadastrar.html">Cadastrar Item</a>
+            <a href="procurar_item.html">Procurar item</a>
+            <a href="login.html">
+                <img src="img/acesso.png" alt="Ícone de Acesso">
+            </a>
+        </nav>
+    </header>
+    <main>
+        <div class="login-container">
+            <h1>Login dos Vigias</h1>
+            <form action="processa_login.php" method="post">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+                
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
+    </main>
+    <footer></footer>
 </body>
 </html>

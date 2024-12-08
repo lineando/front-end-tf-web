@@ -3,25 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/iflogo.png" type="image/png">
     <title>Detalhes do Item</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
     <header>
-        <div class="logo">
-            <h1>achados <span>&perdidos</span></h1>
-        </div>
+        <a href="index.html">
+            <img src="img/logo.png" alt="Logo Achados & Perdidos">
+        </a>
+        <nav>
+            <a href="index.html">Menu</a>
+            <a href="cadastrar.html">Cadastrar Item</a>
+            <a href="procurar_item.html">Procurar item</a>
+            <a href="login.html">
+                <img src="img/acesso.png" alt="Ícone de Acesso">
+            </a>
+        </nav>
     </header>
     <main>
         <section class="item-details">
-            <h2>Título do Item</h2>
-            <img src="placeholder.jpg" alt="Imagem do item">
+            <h2>Carteira Preta</h2>
+            <img src="img/carteira.webp" alt="Carteira Preta">
             <p>Descrição completa do item aqui...</p>
-            <p><strong>Data em que foi encontrado:</strong> 12/12/2024</p>
-            <p><strong>Local onde foi encontrado:</strong> Biblioteca</p>
-            <button class="claim-button">Reclamar Item</button>
+            <p><strong>Data:</strong> 12/12/2024</p>
+            <p><strong>Local:</strong> Biblioteca</p>
+            <button onclick="window.location.href='retirar_item.html'">Reclamar Item</button>
         </section>
     </main>
+    <footer></footer>
 </body>
 </html>
+
 

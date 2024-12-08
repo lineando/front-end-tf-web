@@ -3,45 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Achados e Perdidos</title>
     <link rel="stylesheet" href="css/estilo.css">
+    <title>Painel de Vigias</title>
 </head>
 <body>
+    <!-- Verificar sessão de login em PHP -->
+    <?php
+    session_start();
+    if (!isset($_SESSION['usuario'])) {
+        header("Location: login.html"); // Redireciona para a página de login se não estiver logado
+        exit;
+    }
+    ?>
+
     <header>
-        <element class="header">
-            <img src="img/logo.png" width="300" weight="300">
-        </element>
-        </header>
-    
-        <main>
-        <div class="search-bar">
-            <input type="text" placeholder="Categoria, usuário, local, data...">
+        <h1>Painel de Vigias</h1>
+        <a href="logout.php" class="logout-btn">Sair</a>
+    </header>
+
+    <main>
+        <!-- Menu de Administração -->
+        <div class="menu-container">
+            <h2>Bem-vindo, <?php echo $_SESSION['usuario']; ?>!</h2>
+            <ul>
+                <li><a href="#cadastrar-item"><button>Cadastrar Item</button></a></li>
+                <li><a href="#listar-itens"><button>Listar Itens</button></a></li>
+                <li><a href="#historico"><button>Histórico</button></a></li>
+            </ul>
         </div>
-            <div class="item">
-                
-                    <p><strong>Enviado por</strong> <em>User</em></p>
-                    <p>Nome do objeto cadastrado</p>
-                    <p>DATA: XX/XX/XX LOCAL</p>
-                </div>
-                <button class="confirm-btn">CONFIRMAR RECEBIMENTO</button>
-            </div>
-            <div class="item">
-                
-                    <p><strong>Enviado por</strong> <em>User</em></p>
-                    <p>Nome do objeto cadastrado</p>
-                    <p>DATA: XX/XX/XX &nbsp;&nbsp;&nbsp; LOCAL</p>
-                
-                <button class="retrieved-btn">RETIRADO</button>
-            </div>
-            <div class="item">
-                
-                    <p><strong>Enviado por</strong> <em>User</em></p>
-                    <p>Nome do objeto cadastrado</p>
-                    <p>DATA: XX/XX/XX &nbsp;&nbsp;&nbsp; LOCAL</p>
-                </div><button class="delivered-btn">ENTREGUE</button>
-            </div>
-        </div>
+
+        <!-- Seção: Cadastro de Itens -->
+        <section id="cadastrar-item">
+            <h3>Cadastrar Novo Item</h3>
+            <form action="processa_cadastro.php" method="POST">
+                <label for="titulo">Título do Item:</label>
+                <input type="text" id="titulo" name="titulo" required>
+
+                <label for="descricao">Descrição:</label>
+                <textarea id="descricao" name="descricao" required></textarea>
+
+                <label for="local">Local Encontrado:</label>
+                <input type="text" id="local" name="local" required>
+
+                <label for="data">Data:</label>
+                <input type="date" id="data" name="data" required>
+
+                <button type="submit">Cadastrar</button>
+            </form>
+        </section>
+
+        <!-- Seção: Listar Itens -->
+        <section id="listar-itens">
+            <h3>Itens Cadastrados</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Descrição</th>
+                        <th>Local</th>
+                        <th>Data</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    // Exemplo de exibição dos itens do banco de dados
+                    include 'conexao.php';
+                    $query = "SELECT * FROM itens";
+                    $result = mysqli_query($conn, $query);
+
+                    while ($item = mysqli_fetch_assoc($result)) {
+                        echo "<tr>
+                            <td>{$item['titulo']}</td>
+                            <td>{$item['descricao']}</td>
+                            <td>{$item['local']}</td>
+                            <td>{$item['data']}</td>
+                            <td>
+                                <a href='editar_item.php?id={$item['id']}'>Editar</a>
+                                <a href='excluir_item.php?id={$item['id']}'>Excluir</a>
+                            </td>
+                        </tr>";
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Seção: Histórico -->
+        <section id="historico">
+            <h3>Histórico de Itens</h3>
+            <p>Exemplo: Lista de itens já entregues ou retirados.</p>
+        </section>
     </main>
+
     <footer class="footer">
     </footer>
 </body>
