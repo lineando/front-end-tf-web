@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Procurar Itens</title>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <header>
+    <div class="header">
+      <img src="img/logo.png" alt="Logo Achados e Perdidos" width="300">
+    </div>
+    <nav>
+      <a href="index.html">Menu</a>
+      <a href="cadastro_item.html">Cadastrar Item</a>
+      <a href="login.html">Vigias</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="search-section">
+      <form action="/procurar" method="GET" class="search-form">
+        <input type="text" name="query" placeholder="Digite uma palavra-chave ou categoria..." required>
+        <button type="submit">Pesquisar</button>
+      </form>
+    </section>
+
+    <section class="recent-items">
+      <h2>Itens Recentemente Postados</h2>
+      <div class="item-grid">
+        <!-- Item 1 -->
+        <div class="item-card">
+          <a href="/item.html">
+            <img src="img/carteira.webp" alt="Carteira Preta">
+          </a>
+          <h3>Carteira Preta</h3>
+        </div>
+        <!-- Item 2 -->
+        <div class="item-card">
+          <a href="/item.html">
+            <img src="img/chave.jpeg" alt="Par de Chaves">
+          </a>
+          <h3>Par de Chaves</h3>
+        </div>
+        <!-- Item 3 -->
+        <div class="item-card">
+          <a href="/item.html">
+            <img src="img/garrafa.webp" alt="Garrafa Vermelha">
+          </a>
+          <h3>Garrafa Vermelha</h3>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+  </footer>
+</body>
+</html>
