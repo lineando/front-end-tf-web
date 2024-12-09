@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/img/iflogo.png" type="image/png">
-    <title>Detalhes do Item</title>
+    <title>Detalhes e Retirada do Item</title>
     <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
@@ -23,16 +23,25 @@
     </header>
     <main>
         <section class="item-details">
-            <h2>Carteira Preta</h2>
+            <h2>Detalhes do Item</h2>
             <img src="img/carteira.webp" alt="Carteira Preta">
-            <p>Descrição completa do item aqui...</p>
+            <p><strong>Nome:</strong> Carteira Preta</p>
+            <p><strong>Descrição:</strong> Carteira preta encontrada com documentos.</p>
             <p><strong>Data:</strong> 12/12/2024</p>
             <p><strong>Local:</strong> Biblioteca</p>
-            <button onclick="window.location.href='retirar_item.html'">Reclamar Item</button>
+        </section>
+        <section class="pickup-instructions">
+            <h2>Retirada do Item</h2>
+            <p>Para retirar este item, dirija-se à sala dos vigias no Prédio 1. Certifique-se de levar um documento de identificação para comprovar a posse do objeto.</p>
+        </section>
+        <section class="email-confirmation">
+            <h2>Confirmação de Retirada</h2>
+            <form onsubmit="confirmarRetirada(); return false;">
+                <label for="email">Forneça seu email (opcional):</label>
+                <input type="email" id="email" name="email" placeholder="email@exemplo.com">
+                <button type="submit">Confirmar Retirada</button>
+            </form>
         </section>
     </main>
-    <footer></footer>
 </body>
 </html>
-
-
